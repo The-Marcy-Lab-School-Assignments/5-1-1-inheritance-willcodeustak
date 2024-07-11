@@ -1,13 +1,33 @@
 class Quadrilateral {
-
+constructor (side1,side2,side3,side4){
+this.side1 = side1;
+this.side2 = side2;
+this.side3 = side3;
+this.side4 = side4;
+}
+getPerimeter() {
+  return this.side1 + this.side2 + this.side3 + this.side4;
+}
+}
+class Rectangle extends Quadrilateral { //inherits
+  constructor(side1,side2) {
+    super(side1,side2,side1,side2);   //              // invoke the Person constructor, setting the name, age, and friends properties on `this`
+//inheritance
+  }
+  getArea(){ 
+    return this.side1 * this.side2; //area multiply 
+    //counts as a new rectangle instance?
+  }
 }
 
-class Rectangle {
-
-}
-
-class Square {
-
+class Square extends Rectangle{
+  constructor(side1) {
+    super(side1,side1,side1,side1)
+  }
+  getDiagonal(){
+      return Math.sqrt(this.side1 ** 2 + this.side1 ** 2)
+      //return this.side1 * Math.sqrt(2)
+  }
 }
 
 /* Be creative with this one! */
